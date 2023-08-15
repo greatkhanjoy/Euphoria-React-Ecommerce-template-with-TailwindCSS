@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js",
+  ],
   theme: {
     extend: {
       colors: {
@@ -10,6 +14,7 @@ export default {
         orangeText: "#FBD103",
         star: "#EDD146",
         grayBG: "#F6F6F6",
+        border: "#BEBCBD",
       },
       fontFamily: {
         caustenblack: ["caustenblack"],
@@ -50,5 +55,5 @@ export default {
       xl: "1240px",
     },
   },
-  plugins: [],
+  // plugins: [require("flowbite/plugin")],
 };

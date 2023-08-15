@@ -6,11 +6,12 @@ import {
 } from "react-icons/ai";
 
 import { CiSearch } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const MobileMenu = ({ Menu, showMobileMenu, toggleMobileMenu }) => {
   return (
     <div
-      className={`mobile-menu py-10 fixed z-50 top-0 left-0 min-h-screen w-full flex flex-col gap-5 items-center bg-grayBG md:hidden ${
+      className={`mobile-menu py-10 absolute z-50 top-0 left-0 min-h-screen w-full flex flex-col gap-5 items-center bg-grayBG md:hidden ${
         showMobileMenu ? "slide-in" : "slide-out"
       }`}
     >
@@ -21,7 +22,9 @@ const MobileMenu = ({ Menu, showMobileMenu, toggleMobileMenu }) => {
       <ul className="nav-menu flex flex-col items-center gap-8 font-caustenmedium text-lg text-secondary">
         {Menu.map((item) => (
           <li key={item.id}>
-            <a href={item.link}>{item.title}</a>
+            <Link onClick={toggleMobileMenu} to={item.link}>
+              {item.title}
+            </Link>
           </li>
         ))}
       </ul>
@@ -34,15 +37,19 @@ const MobileMenu = ({ Menu, showMobileMenu, toggleMobileMenu }) => {
         <CiSearch className="absolute top-3 text-lg text-secondary left-3" />
       </div>
       <div className="flex gap-4 text-secondary text-lg ">
-        <button className="bg-white p-3 rounded-md hover:bg-primary hover:text-white transition-all duration-200 delay-75">
+        <button className="bg-white p-3 rounded-md hover:bg-blueBar hover:text-white transition-all duration-200 delay-75">
           <AiOutlineHeart />
         </button>
-        <button className="bg-white p-3 rounded-md hover:bg-primary hover:text-white transition-all duration-200 delay-75">
+        <button className="bg-white p-3 rounded-md hover:bg-blueBar hover:text-white transition-all duration-200 delay-75">
           <AiOutlineUser />
         </button>
-        <button className="bg-white p-3 rounded-md hover:bg-primary hover:text-white transition-all duration-200 delay-75">
+        <Link
+          onClick={toggleMobileMenu}
+          to={"/cart"}
+          className="bg-white p-3 rounded-md hover:bg-blueBar hover:text-white transition-all duration-200 delay-75"
+        >
           <AiOutlineShoppingCart />
-        </button>
+        </Link>
       </div>
     </div>
   );

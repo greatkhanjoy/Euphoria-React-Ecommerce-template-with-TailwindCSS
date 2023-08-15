@@ -2,6 +2,7 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
 import { heroSlide1 } from "../assets/img";
+import { Link } from "react-router-dom";
 
 const slideImages = [
   {
@@ -46,12 +47,12 @@ const Hero = () => {
                 <h4 className="font-core_sans_medium text-lg md:text-2xl">
                   {slide.description}
                 </h4>
-                <a
-                  href={slide.link}
+                <Link
+                  to={slide.link}
                   className="font-caustenbold text-lg md:text-xl px-10 md:px-16 py-2 md:py-3 text-primary bg-white rounded-md"
                 >
                   {slide.button}
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -4,36 +4,20 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Arrival, Arrival2, Arrival3, Arrival4 } from "../assets/img";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
-const items = [
-  {
-    id: 1,
-    img: Arrival,
-    name: "Knitted Joggers",
-  },
-  {
-    id: 2,
-    img: Arrival2,
-    name: "Full Sleeve",
-  },
-  {
-    id: 3,
-    img: Arrival3,
-    name: "Active T-Shirts",
-  },
-  {
-    id: 4,
-    img: Arrival4,
-    name: "Urban Shirts",
-  },
-  {
-    id: 5,
-    img: Arrival2,
-    name: "Urban Shirts",
-  },
-];
+import { categories } from "../products.json";
+
+const filteredCategories = categories.filter(
+  (category) => category.parent !== ""
+);
 
 const Carousel = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { once: true });
+
   const settings = {
     dots: true,
     infinite: true,
@@ -88,22 +72,31 @@ const Carousel = () => {
           <div className="w-[7px] h-8 rounded-md bg-blueBar"></div>
           <h3 className="text-3xl font-core_sans_bold">New Arrival</h3>
         </div>
-        <Slider {...settings} className="mt-14">
-          {items.map((item) => (
-            <div key={item.id} className="">
-              <div className="w-full rounded-md overflow-hidden mb-8">
-                <img
-                  src={item.img}
-                  alt="new Arrival"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="text-lg font-caustenbold text-center md:text-left">
-                {item.name}
-              </p>
-            </div>
-          ))}
-        </Slider>
+        <div
+          ref={ref}
+          style={{
+            transform: isInView ? "none" : "scale(1.5)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
+          <Slider {...settings} className="mt-14">
+            {filteredCategories.map((item) => (
+              <Link to={`/category/${item.id}`} key={item.id}>
+                <div className="w-full rounded-md overflow-hidden mb-8">
+                  <img
+                    src={item.image}
+                    alt="new Arrival"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="text-lg font-caustenbold text-center md:text-left">
+                  {item.name}
+                </p>
+              </Link>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

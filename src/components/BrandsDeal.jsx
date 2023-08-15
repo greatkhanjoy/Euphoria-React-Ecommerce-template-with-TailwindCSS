@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import {
   BrandOne,
   BrandTwo,
@@ -5,11 +6,22 @@ import {
   BrandFour,
   BrandFive,
 } from "../assets/img";
+import { useInView } from "framer-motion";
 
 const BrandsDeal = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { once: true });
   return (
     <section className="my-20">
-      <div className="container bg-primary rounded-lg py-10">
+      <div
+        className="container bg-primary rounded-lg py-10"
+        ref={ref}
+        style={{
+          transform: isInView ? "none" : "scale(0.2)",
+          opacity: isInView ? 1 : 0,
+          transition: "transform 0.7s ease-in-out",
+        }}
+      >
         <div className="text-center text-white mb-14">
           <h2 className="font-core_sans_heavy text-4xl">Top Brands Deal</h2>
           <p className="text-lg font-caustenmedium">

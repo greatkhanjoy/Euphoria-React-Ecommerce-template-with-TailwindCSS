@@ -7,6 +7,8 @@ import {
   SavingBigOne,
   SavingBigTwo,
 } from "../assets/img";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 const savingData = [
   {
@@ -70,6 +72,10 @@ const savingData2 = [
 ];
 
 const SavingZone = () => {
+  const ref = useRef();
+  const bigSize = useRef();
+  const isInView = useInView(ref, { once: true });
+  const isInViewBig = useInView(bigSize, { once: true });
   return (
     <section className="py-10 ">
       <div className="container">
@@ -81,11 +87,17 @@ const SavingZone = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-14">
           {savingData.map((item) => (
             <div
+              ref={ref}
+              style={{
+                transform: isInView ? "none" : "scale(0.2)",
+                opacity: isInView ? 1 : 0,
+                transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                backgroundImage: `url(${item.img})`,
+              }}
               key={item.id}
               className={`w-full rounded-md overflow-hidden bg-cover bg-no-repeat bg-center py-16 px-4 ${
                 item.color === "primary" ? "text-primary" : "text-white"
               }`}
-              style={{ backgroundImage: `url(${item.img})` }}
             >
               <div
                 className={`flex flex-col gap-4 ${
@@ -127,11 +139,17 @@ const SavingZone = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mt-5">
           {savingData2.map((item) => (
             <div
+              ref={bigSize}
+              style={{
+                transform: isInViewBig ? "none" : "scale(0.2)",
+                opacity: isInViewBig ? 1 : 0,
+                transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                backgroundImage: `url(${item.img})`,
+              }}
               key={item.id}
               className={`w-full rounded-md overflow-hidden  bg-cover bg-no-repeat bg-center py-16 px-16 ${
                 item.color === "primary" ? "text-primary" : "text-white"
               }`}
-              style={{ backgroundImage: `url(${item.img})` }}
             >
               <div
                 className={`flex flex-col gap-4 ${

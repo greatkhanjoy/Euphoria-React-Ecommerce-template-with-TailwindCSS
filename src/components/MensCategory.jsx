@@ -1,68 +1,31 @@
-import {
-  MenOne,
-  MenTwo,
-  MenThree,
-  MenFour,
-  MenFive,
-  MenSix,
-  MenSeven,
-  MenEight,
-} from "../assets/img";
+import { useRef } from "react";
 import CategoryGrid from "./CategoryGrid";
+import { useInView } from "framer-motion";
 
-const categories = [
-  {
-    id: 1,
-    img: MenOne,
-    title: "Shirts",
-  },
-  {
-    id: 2,
-    img: MenTwo,
-    title: "Printed T-Shirts",
-  },
-  {
-    id: 3,
-    img: MenThree,
-    title: "Plain T-Shirt",
-  },
-  {
-    id: 4,
-    img: MenFour,
-    title: "Polo T-Shirt",
-  },
-  {
-    id: 5,
-    img: MenFive,
-    title: "Hoodies & Sweetshirt",
-  },
-  {
-    id: 6,
-    img: MenSix,
-    title: "Jeans",
-  },
-  {
-    id: 7,
-    img: MenSeven,
-    title: "Activewear",
-  },
-  {
-    id: 8,
-    img: MenEight,
-    title: "Boxers",
-  },
-];
+import { categories } from "../products.json";
+
+const mensCategories = categories.filter((category) => category.parent === 13);
 
 const MensCategory = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { once: true });
   return (
     <section className="my-20 ">
-      <div className="container">
+      <div
+        className="container"
+        ref={ref}
+        style={{
+          transform: isInView ? "translateY(0)" : "translateY(20%)",
+          opacity: isInView ? 1 : 0,
+          transition: "transform 0.5s ease-in-out",
+        }}
+      >
         <div className="section_heading flex justify-start items-center gap-5">
           <div className="w-[7px] h-8 rounded-md bg-blueBar"></div>
           <h3 className="text-3xl font-core_sans_bold">Categories For Men</h3>
         </div>
         <div className="mt-10">
-          <CategoryGrid categories={categories} />
+          <CategoryGrid categories={mensCategories} />
         </div>
       </div>
     </section>

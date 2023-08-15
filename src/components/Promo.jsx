@@ -1,13 +1,23 @@
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 import { promoTwo, promoOne } from "../assets/img";
 
 const Promo = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { once: true });
+
   return (
     <section className="pt-20 pb-10">
       <div className="container">
         <div className="flex flex-col  gap-10 md:flex-row md:justify-between ">
           <div
+            ref={ref}
+            style={{
+              transform: isInView ? "translateX(0)" : "translateX(-100%)",
+              transition: "transform 0.8s ease-in-out",
+              backgroundImage: `url(${promoOne})`,
+            }}
             className="bg-no-repeat bg-cover bg-center py-16 px-6 text-white w-full flex flex-col items-start gap-8 rounded-md overflow-hidden"
-            style={{ backgroundImage: `url(${promoOne})` }}
           >
             <p className="font-core_sans_heavy">Low Price</p>
             <div>
@@ -21,8 +31,13 @@ const Promo = () => {
             </a>
           </div>
           <div
+            ref={ref}
+            style={{
+              transform: isInView ? "translateX(0)" : "translateX(100%)",
+              transition: "transform 0.8s ease-in-out",
+              backgroundImage: `url(${promoTwo})`,
+            }}
             className="bg-no-repeat bg-cover bg-center py-16 px-6 text-white w-full flex flex-col items-start gap-8 rounded-md overflow-hidden"
-            style={{ backgroundImage: `url(${promoTwo})` }}
           >
             <p className="font-core_sans_heavy">Beyoung Presents</p>
             <div>

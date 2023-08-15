@@ -1,39 +1,33 @@
-import { WomenOne, WomenTwo, WomenThree, WomenFour } from "../assets/img";
-import CategoryGrid from "./CategoryGrid";
+import { useRef } from "react";
 
-const categories = [
-  {
-    id: 1,
-    img: WomenOne,
-    title: "Hoodies & Sweetshirt",
-  },
-  {
-    id: 2,
-    img: WomenTwo,
-    title: "Coats & Parkas",
-  },
-  {
-    id: 3,
-    img: WomenThree,
-    title: "Tees & T-Shirt",
-  },
-  {
-    id: 4,
-    img: WomenFour,
-    title: "Boxers",
-  },
-];
+import CategoryGrid from "./CategoryGrid";
+import { useInView } from "framer-motion";
+import { categories } from "../products.json";
+
+const womensCategories = categories.filter(
+  (category) => category.parent === 14
+);
 
 const WomensCategory = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { once: true });
   return (
     <section className="my-20 ">
-      <div className="container">
+      <div
+        className="container"
+        ref={ref}
+        style={{
+          transform: isInView ? "translateY(0)" : "translateY(20%)",
+          opacity: isInView ? 1 : 0,
+          transition: "transform 0.5s ease-in-out",
+        }}
+      >
         <div className="section_heading flex justify-start items-center gap-5">
           <div className="w-[7px] h-8 rounded-md bg-blueBar"></div>
           <h3 className="text-3xl font-core_sans_bold">Categories For Women</h3>
         </div>
         <div className="mt-10">
-          <CategoryGrid categories={categories} />
+          <CategoryGrid categories={womensCategories} />
         </div>
       </div>
     </section>

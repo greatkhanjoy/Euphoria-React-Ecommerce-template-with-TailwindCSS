@@ -1,30 +1,26 @@
-import BrandsDeal from "./components/BrandsDeal";
-import CallToAction from "./components/CallToAction";
-import Carousel from "./components/Carousel";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import LimeLight from "./components/LimeLight";
-import MensCategory from "./components/MensCategory";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Promo from "./components/Promo";
-import SavingZone from "./components/SavingZone";
-import WomensCategory from "./components/WomensCategory";
+import Home from "./pages/Home";
+import DefaultLayout from "./layouts/DefaultLayout";
+import Products from "./pages/Products";
+import SingleProduct from "./pages/SingleProduct";
+import CartPage from "./pages/CartPage";
+import SingleCategory from "./pages/SingleCategory";
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Hero />
-      <Promo />
-      <Carousel />
-      <SavingZone />
-      <CallToAction />
-      <MensCategory />
-      <WomensCategory />
-      <BrandsDeal />
-      <LimeLight />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<DefaultLayout />}>
+            <Route index element={<Home />} />
+            <Route path="products" element={<Products />} />
+            <Route path="products/:id" element={<SingleProduct />} />
+            <Route path="category/:category" element={<SingleCategory />} />
+            <Route path="cart" element={<CartPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

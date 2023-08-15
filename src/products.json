@@ -1,0 +1,337 @@
+{
+    "products" : [
+        {
+            "id" : 1,
+            "name" : "Black Sweatshirt with White Logo",
+            "category" : 9, 
+            "price" : 123,
+            "brand": 1,
+            "images": [
+                "http://localhost:5173/img/pr1.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id" : 2,
+            "name" : "White T-shirt",
+            "price" : 11,
+            "category" : 10,
+            "brand": 2,
+            "images": [
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id" : 3,
+            "name" : "Levender Hoodie with Pocket",
+            "price" : 119,
+            "category" : 11,
+            "brand": 3,
+            "images": [
+                "http://localhost:5173/img/pr3.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id" : 4,
+            "name" : "Leaves Pattern White T-shirt",
+            "price" : 77,
+            "category" : 12,
+            "brand": 4,
+            "images": [
+                "http://localhost:5173/img/pr4.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id" : 5,
+            "name" : "White Graphic Crop Top",
+            "price" : 29,
+            "category" : 11,
+            "brand": 5,
+            "images": [
+                "http://localhost:5173/img/pr5.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Black Shorts",
+            "price": 37,
+            "category": 9,
+            "brand": 6,
+            "images": [
+                "http://localhost:5173/img/pr6.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Barboreal Gray Sweat Shirt",
+            "price": 77,
+            "category": 10,
+            "brand": 7,
+            "images": [
+                "http://localhost:5173/img/pr7.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Yellow Sweatshirt",
+            "price": 29,
+            "category": 11,
+            "brand": 8,
+            "images": [
+                "http://localhost:5173/img/pr8.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Flower Pattern Black Color T-Shirt",
+            "price": 37,
+            "category": 12,
+            "brand": 2,
+            "images": [
+                "http://localhost:5173/img/pr9.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id": 10,
+            "name": "I Don’t Graphic T-shirt ",
+            "price": 77,
+            "category": 9,
+            "brand": 2,
+            "images": [
+                "http://localhost:5173/img/pr10.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Blue Flower Print Crop Top",
+            "price": 29,
+            "category": 11,
+            "brand": 3,
+            "images": [
+                "http://localhost:5173/img/pr11.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id": 12,
+            "name": "line Pattern Black T-Shirt",
+            "price": 37,
+            "category": 12,
+            "brand": 3,
+            "images": [
+                "http://localhost:5173/img/pr12.png",
+                "http://localhost:5173/img/pr2.png",
+                "http://localhost:5173/img/pr3.png"
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Dark Green Sweatshirt",
+            "price": 127,
+            "category": 5,
+            "brand": 9,
+            "images": [
+                "http://localhost:5173/img/pr13.png",
+                "http://localhost:5173/img/pr14.png",
+                "http://localhost:5173/img/pr15.png"
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Urban jacket with white logo",
+            "price": 79,
+            "category": 7,
+            "brand": 10,
+            "images": [
+                "http://localhost:5173/img/pr14.png",
+                "http://localhost:5173/img/pr14.png",
+                "http://localhost:5173/img/pr15.png"
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Denim Blue Shirt",
+            "price": 38,
+            "category": 5,
+            "brand": 10,
+            "images": [
+                "http://localhost:5173/img/pr15.png",
+                "http://localhost:5173/img/pr14.png",
+                "http://localhost:5173/img/pr15.png"
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Plain White T-Shirt",
+            "price": 123,
+            "category": 2,
+            "brand": 11,
+            "images": [
+                "http://localhost:5173/img/pr16.png",
+                "http://localhost:5173/img/pr14.png",
+                "http://localhost:5173/img/pr15.png"
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Checks Shirt with white logo",
+            "price": 123,
+            "category": 1,
+            "brand": 10,
+            "images": [
+                "http://localhost:5173/img/pr17.png",
+                "http://localhost:5173/img/pr14.png",
+                "http://localhost:5173/img/pr15.png"
+            ]
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Shirts",
+            "image" : "http://localhost:5173/img/men-1.png",
+            "parent": 13
+        },
+        {
+            "id": 2,
+            "name": "Printed T-Shirts",
+            "image":"http://localhost:5173/img/men-2.png",
+            "parent": 13
+        },
+        {
+            "id": 3,
+            "name": "Plain T-Shirt",
+            "image":"http://localhost:5173/img/men-3.png",
+            "parent": 13
+        },
+        {
+            "id": 4,
+            "name": "Polo T-Shirt",
+            "image":"http://localhost:5173/img/men-4.png",
+            "parent": 13
+        },
+        {
+            "id": 5,
+            "name": "Hoodies & Sweetshirt",
+            "image":"http://localhost:5173/img/men-5.png",
+            "parent": 13
+        },
+        {
+            "id": 6,
+            "name": "Jeans",
+            "image":"http://localhost:5173/img/men-6.png",
+            "parent": 13
+        },
+        {
+            "id": 7,
+            "name": "Activewear",
+            "image":"http://localhost:5173/img/men-7.png",
+            "parent": 13
+        },
+        {
+            "id": 8,
+            "name": "Boxers",
+            "image":"http://localhost:5173/img/men-8.png",
+            "parent": 13
+        },
+        {
+            "id": 9,
+            "name": "Hoodies & Sweetshirt",
+            "image":"http://localhost:5173/img/women-1.png",
+            "parent": 14
+        },
+        {
+            "id": 10,
+            "name": "Coats & Parkas",
+            "image":"http://localhost:5173/img/women-2.png",
+            "parent": 14
+        },
+        {
+            "id": 11,
+            "name": "Tees & T-Shirt",
+            "image":"http://localhost:5173/img/women-3.png",
+            "parent": 14
+        },
+        {
+            "id": 12,
+            "name": "Boxers",
+            "image":"http://localhost:5173/img/women-4.png",
+            "parent": 14
+        },
+        {
+            "id": 13,
+            "name": "Men",
+            "parent": ""
+        },{
+            "id": 14,
+            "name": "Women",
+            "parent": ""
+        }
+    ],
+    "brands" : [
+        {
+            "id": 1,
+            "name": "Jhanvi’s  Brand"
+        },
+        {
+            "id": 2,
+            "name": "AS’s  Brand"
+        },
+        {
+            "id": 3,
+            "name": "Helen’s  Brand"
+        },
+        {
+            "id": 4,
+            "name": "Nike’s  Brand"
+        },
+        {
+            "id": 5,
+            "name": "paypal’s  Brand"
+        },
+        {
+            "id": 6,
+            "name": "woden’s  Brand"
+        },
+        {
+            "id": 7,
+            "name": "MM’s  Brand"
+        },
+        {
+            "id": 8,
+            "name": "Priya’s  Brand"
+        },
+        {
+            "id": 9,
+            "name": "Roboto’s  Brand"
+        },
+        {
+            "id": 10,
+            "name": "Sagar’s  Brand"
+        },
+        {
+            "id": 11,
+            "name": "H.M’s  Brand"
+        }
+    ]
+}

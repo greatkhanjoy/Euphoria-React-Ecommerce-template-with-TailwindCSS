@@ -9,12 +9,13 @@ import { CiSearch } from "react-icons/ci";
 
 import { logo } from "../assets/img";
 import MobileMenu from "./MobileMenu";
+import { Link } from "react-router-dom";
 
 const Menu = [
   {
     id: 1,
     title: "Shop",
-    link: "#",
+    link: "/products",
   },
   {
     id: 2,
@@ -49,13 +50,15 @@ const Header = () => {
       <div className="container">
         <div className="flex justify-between gap-12 items-center h-[108px]">
           <div className="logo">
-            <img src={logo} alt="Eupheria" />
+            <Link to="/">
+              <img src={logo} alt="Eupheria" />
+            </Link>
           </div>
           <nav className="hidden md:flex">
             <ul className="nav-menu flex gap-8 font-caustenmedium text-lg text-secondary">
               {Menu.map((item) => (
                 <li key={item.id}>
-                  <a href={item.link}>{item.title}</a>
+                  <Link to={item.link}>{item.title}</Link>
                 </li>
               ))}
             </ul>
@@ -69,15 +72,18 @@ const Header = () => {
             <CiSearch className="absolute top-3 text-lg text-secondary left-3" />
           </div>
           <div className="hidden md:flex gap-4 text-secondary text-lg ">
-            <button className="bg-grayBG p-3 rounded-md hover:bg-primary hover:text-white transition-all duration-200 delay-75">
+            <button className="bg-grayBG p-3 rounded-md hover:bg-blueBar hover:text-white transition-all duration-200 delay-75">
               <AiOutlineHeart />
             </button>
-            <button className="bg-grayBG p-3 rounded-md hover:bg-primary hover:text-white transition-all duration-200 delay-75">
+            <button className="bg-grayBG p-3 rounded-md hover:bg-blueBar hover:text-white transition-all duration-200 delay-75">
               <AiOutlineUser />
             </button>
-            <button className="bg-grayBG p-3 rounded-md hover:bg-primary hover:text-white transition-all duration-200 delay-75">
+            <Link
+              to="/cart"
+              className="bg-grayBG p-3 rounded-md hover:bg-blueBar hover:text-white transition-all duration-200 delay-75"
+            >
               <AiOutlineShoppingCart />
-            </button>
+            </Link>
           </div>
           <button onClick={toggleMobileMenu}>
             <BsGridFill className="flex text-secondary text-lg md:hidden hover:text-primary transition-colors duration-200" />
